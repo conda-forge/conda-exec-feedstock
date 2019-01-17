@@ -18,6 +18,8 @@ requirements:
         - conda
 
 test:
+    requires:
+        - util-linux  # [linux]
     files:
         - tests
     commands:
@@ -31,7 +33,7 @@ test:
         - num-args 2 one two
         - conda-exec -- $PREFIX num-args 2 one two
         - num-args 1 "one two"
-        - conda-exec -- $PREFIX num-args 1 \'one two\'
+        - conda-exec -- $PREFIX num-args 1 'one two'
 
 
 about:
