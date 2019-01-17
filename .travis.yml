@@ -11,7 +11,6 @@ env:
     # The BINSTAR_TOKEN secure variable. This is defined canonically in conda-forge.yml.
     - secure: "nFBvUgijbrr3d2SlI0W+gKrcSXOYupLhnQK87u+JWPnlmZDs4n8Utiby9Xx2LaaEC10DZ6BQD2HQlDwvj0OP07CcDOWb4UfBWv2n414X/8sjxBzxzFZPhQhFJ9qC4ARlXWjkr4PY+Oop4wRjJ5GZKqYBqFF2Pdf/EhsuQFXYuNPI04iHldCm1PRO4fX7HixSEExkByZ/rgzQ1j+s4C+O7lO8BS6/ZzXGlNVqJu95m0Vplh1BWfGolVDLAeDdN4LmdtkhaYV5jY1SQNPvXOXgjkGgiUIscMPdjW8lo7c8+v3/CfoTI37jN/zRHqx93kxMTHraY7Ol3wJ+Oyzbb7peaf4HGxPUgIKNWaQSDIqK+kVjEaWHNnnUP79qrltpQ2Zsxe8tI/S2ZKDKyseThRIEN9vvcFddtn4xvnZIKW8Jx92oRITY2MktdkytJK1H0GlJ5ceLlFa6mmJ3bRNmudVF3pZ3DjsltQmPZf+kT04DpmdmwG2KuGnxUgywpCmbER61tqrywBTkCV1muoMgjrZb/RBxhfGQkxNEoALUPYZARWPrdoXvUVutJHhmBYmqg80cKOWmYhkWV/x6Kk1Z5yUWSwNASuuX8OcZp3zUFAcOYB15yFA3p6aJq71anHaqtoW++glvdMMVfGcbFuq7llNjiU1cUfhtub9XHw0HLbOIHxU="
 
-
 before_install:
     # Fast finish the PR.
     - |
