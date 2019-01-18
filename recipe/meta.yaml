@@ -18,8 +18,6 @@ requirements:
         - conda
 
 test:
-    requires:
-        - util-linux  # [linux]
     files:
         - tests
     commands:
