@@ -14,7 +14,7 @@ _EOF
 
 CONDA_EXEC_DIR="$(cd "$(dirname "${0}")" && pwd -P)"
 
-ARGS=`getopt h $*`
+ARGS=`getopt h $@`
 if [[ $? -ne 0 ]]; then
     usage
     exit 2
