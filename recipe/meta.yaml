@@ -11,7 +11,8 @@ build:
     number: 0
     skip: True  # [win]
     script:
-        - install conda-exec.sh ${PREFIX}/bin/conda-exec
+        - mkdir ${PREFIX}/bin
+        - cp conda-exec ${PREFIX}/bin/conda-exec
 
 requirements:
     run:
