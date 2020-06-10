@@ -1,4 +1,4 @@
-{% set version = "0.1.1" %}
+{% set version = "0.2.0" %}
 
 package:
     name: conda-exec
@@ -11,7 +11,8 @@ build:
     number: 0
     skip: True  # [win]
     script:
-        - install conda-exec.sh ${PREFIX}/bin/conda-exec
+        - mkdir ${PREFIX}/bin
+        - cp conda-exec ${PREFIX}/bin/conda-exec
 
 requirements:
     run:
@@ -36,7 +37,7 @@ test:
 
 about:
     home: https://github.com/conda-forge/conda-exec-feedstock
-    license: BSD 3-Clause
+    license: BSD-3-Clause
     license_family: BSD
     license_file: LICENSE
     summary: Executes a command inside a conda environment
