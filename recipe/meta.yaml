@@ -37,6 +37,7 @@ test:
     - conda exec --help
     - pip check
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
