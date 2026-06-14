@@ -1,53 +1,58 @@
-{% set version = "0.2.1" %}
+{% set name = "conda-exec" %}
+{% set version = "0.3.0" %}
+{% set python_min = "3.10" %}
 
 package:
-    name: conda-exec
-    version: {{ version }}
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-    path: .
+  url: https://pypi.org/packages/source/c/conda-exec/conda_exec-{{ version }}.tar.gz
+  sha256: 2669a204c55b1c9a70305dd3fb5b69da7e868dcdf676a503014d6000c4a3cf0f
 
 build:
-    number: 0
-    skip: True  # [win]
-    script:
-        - mkdir ${PREFIX}/bin
-        - cp conda-exec ${PREFIX}/bin/conda-exec
+  noarch: python
+  number: 0
+  entry_points:
+    - ce = conda_exec.main:main
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
-    run:
-        - conda
+  host:
+    - python {{ python_min }}.*
+    - pip
+    - hatchling >=1.12.2
+    - hatch-vcs >=0.2.0
+  run:
+    - python >={{ python_min }}
+    - conda >=25.1
+    - packaging >=22.0
+    - tomli >=1.0
 
 test:
-    files:
-        - tests
-    commands:
-        - conda-exec -h
-        - install tests/num-args.sh $PREFIX/bin/num-args
-        - num-args 0
-        - set -x
-        - conda-exec -- $PREFIX num-args 0
-        - num-args 1 one
-        - conda-exec -- $PREFIX num-args 1 one
-        - num-args 2 one two
-        - conda-exec -- $PREFIX num-args 2 one two
-        - num-args 1 "one two"
-        - conda-exec -- $PREFIX num-args 1 \"one two\"
-
+  imports:
+    - conda_exec
+  commands:
+    - ce --help
+    - conda exec --help
+    - pip check
+  requires:
+    - pip
 
 about:
-    home: https://github.com/conda-forge/conda-exec-feedstock
-    license: BSD-3-Clause
-    license_family: BSD
-    license_file: LICENSE
-    summary: Executes a command inside a conda environment
-
-    description: |
-      conda-exec activates the program's conda environment before executing it.
-
-    dev_url: https://github.com/conda-forge/conda-exec-feedstock
+  home: https://github.com/conda-incubator/conda-exec
+  license: BSD-3-Clause
+  license_family: BSD
+  license_file: LICENSE
+  summary: Ephemeral package execution for conda
+  description: |
+    conda-exec lets you run conda packages without installing them permanently.
+    It creates cached, isolated environments on demand and also supports
+    PEP 723 script metadata workflows.
+  dev_url: https://github.com/conda-incubator/conda-exec
+  doc_url: https://conda-incubator.github.io/conda-exec
 
 extra:
-    recipe-maintainers:
-        - jezdez
-        - sodre
+  recipe-maintainers:
+    - jezdez
+    - sodre
