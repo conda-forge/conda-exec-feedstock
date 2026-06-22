@@ -156,6 +156,3 @@ Feedstock Maintainers
 * [@jezdez](https://github.com/jezdez/)
 * [@sodre](https://github.com/sodre/)
 
-
-<!-- dummy commit to enable rerendering -->
-

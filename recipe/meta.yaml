@@ -1,5 +1,5 @@
 {% set name = "conda-exec" %}
-{% set version = "0.3.0" %}
+{% set version = "0.4.0" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/c/conda-exec/conda_exec-{{ version }}.tar.gz
-  sha256: 2669a204c55b1c9a70305dd3fb5b69da7e868dcdf676a503014d6000c4a3cf0f
+  sha256: 14b9af6c937e07403fc900eee64c85970708014efce9287765417b7e8e2cfc1c
 
 build:
   noarch: python
